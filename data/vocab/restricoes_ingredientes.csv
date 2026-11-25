@@ -1,0 +1,134 @@
+ingrediente_id,componente,nivel,observacao
+leite,leite,contem,
+leite,lactose,contem,
+leite,origem_animal,contem,
+creme_de_leite,leite,contem,
+creme_de_leite,lactose,contem,
+creme_de_leite,origem_animal,contem,
+queijo_mussarela,leite,contem,
+queijo_mussarela,lactose,contem,
+queijo_mussarela,origem_animal,contem,
+queijo_parmesao,leite,contem,
+queijo_parmesao,lactose,contem,Queijos curados têm pouca lactose; marcado por precaução
+queijo_parmesao,origem_animal,contem,
+queijo_minas,leite,contem,
+queijo_minas,lactose,contem,
+queijo_minas,origem_animal,contem,
+requeijao,leite,contem,
+requeijao,lactose,contem,
+requeijao,origem_animal,contem,
+iogurte_natural,leite,contem,
+iogurte_natural,lactose,contem,
+iogurte_natural,origem_animal,contem,
+leite_condensado,leite,contem,
+leite_condensado,lactose,contem,
+leite_condensado,origem_animal,contem,
+manteiga,leite,contem,
+manteiga,lactose,contem,
+manteiga,origem_animal,contem,
+ovo,ovo,contem,
+ovo,origem_animal,contem,
+maionese,ovo,contem,Maionese tradicional leva ovo
+maionese,origem_animal,contem,
+maionese,soja,pode_conter,Muitas marcas usam óleo de soja
+mel,origem_animal,contem,
+farinha_de_trigo,trigo,contem,
+farinha_de_trigo,gluten,contem,
+macarrao,trigo,contem,Macarrão de trigo
+macarrao,gluten,contem,
+macarrao,ovo,pode_conter,Algumas massas levam ovo
+macarrao,origem_animal,pode_conter,Algumas massas levam ovo
+pao_frances,trigo,contem,
+pao_frances,gluten,contem,
+pao_frances,leite,pode_conter,Depende da padaria
+pao_frances,lactose,pode_conter,Depende da padaria
+pao_frances,origem_animal,pode_conter,Depende da padaria
+pao_de_forma,trigo,contem,
+pao_de_forma,gluten,contem,
+pao_de_forma,leite,pode_conter,Depende da marca
+pao_de_forma,lactose,pode_conter,Depende da marca
+pao_de_forma,soja,pode_conter,Depende da marca
+pao_de_forma,origem_animal,pode_conter,Depende da marca
+aveia,trigo,contem,A Anvisa inclui a aveia no grupo do trigo
+aveia,gluten,contem,A Anvisa cita a aveia entre os cereais com glúten
+shoyu,soja,contem,
+shoyu,trigo,contem,A maioria das marcas leva trigo
+shoyu,gluten,contem,A maioria das marcas leva trigo
+oleo_de_soja,soja,contem,A Anvisa lista o óleo como derivado de soja
+fuba,gluten,pode_conter,Pode haver contaminação cruzada no processamento
+farinha_de_milho_flocada,gluten,pode_conter,Pode haver contaminação cruzada no processamento
+fermento_quimico,gluten,pode_conter,Depende da marca
+caldo_de_galinha,carne,contem,
+caldo_de_galinha,origem_animal,contem,
+caldo_de_galinha,gluten,pode_conter,Depende da marca
+caldo_de_galinha,trigo,pode_conter,Depende da marca
+caldo_de_galinha,leite,pode_conter,Depende da marca
+caldo_de_galinha,lactose,pode_conter,Depende da marca
+caldo_de_galinha,soja,pode_conter,Depende da marca
+molho_de_tomate,gluten,pode_conter,Depende da marca
+molho_de_tomate,trigo,pode_conter,Depende da marca
+molho_de_tomate,soja,pode_conter,Depende da marca
+extrato_de_tomate,gluten,pode_conter,Depende da marca
+ketchup,gluten,pode_conter,Depende da marca
+mostarda,gluten,pode_conter,Depende da marca
+chocolate_em_po,leite,pode_conter,Achocolatados costumam ter leite; depende da marca
+chocolate_em_po,lactose,pode_conter,Achocolatados costumam ter leite; depende da marca
+chocolate_em_po,origem_animal,pode_conter,Achocolatados costumam ter leite; depende da marca
+chocolate_em_po,soja,pode_conter,Depende da marca
+chocolate_em_po,gluten,pode_conter,Depende da marca
+chocolate_em_po,trigo,pode_conter,Depende da marca
+chocolate_em_po,amendoim,pode_conter,Depende da marca
+chocolate_em_po,castanhas,pode_conter,Depende da marca
+batata_palha,gluten,pode_conter,Depende da marca
+batata_palha,soja,pode_conter,Pode ser frita em óleo de soja
+frango,carne,contem,
+frango,origem_animal,contem,
+peito_de_frango,carne,contem,
+peito_de_frango,origem_animal,contem,
+coxa_de_frango,carne,contem,
+coxa_de_frango,origem_animal,contem,
+sobrecoxa_de_frango,carne,contem,
+sobrecoxa_de_frango,origem_animal,contem,
+carne_bovina_moida,carne,contem,
+carne_bovina_moida,origem_animal,contem,
+carne_bovina_patinho,carne,contem,
+carne_bovina_patinho,origem_animal,contem,
+carne_bovina_acem,carne,contem,
+carne_bovina_acem,origem_animal,contem,
+carne_bovina_alcatra,carne,contem,
+carne_bovina_alcatra,origem_animal,contem,
+bacon,carne,contem,
+bacon,origem_animal,contem,
+presunto,carne,contem,
+presunto,origem_animal,contem,
+presunto,leite,pode_conter,Depende da marca
+presunto,lactose,pode_conter,Depende da marca
+presunto,soja,pode_conter,Depende da marca
+presunto,gluten,pode_conter,Depende da marca
+salsicha,carne,contem,
+salsicha,origem_animal,contem,
+salsicha,leite,pode_conter,Depende da marca
+salsicha,lactose,pode_conter,Depende da marca
+salsicha,soja,pode_conter,Depende da marca
+salsicha,gluten,pode_conter,Depende da marca
+salsicha,trigo,pode_conter,Depende da marca
+linguica_calabresa,carne,contem,
+linguica_calabresa,origem_animal,contem,
+linguica_calabresa,leite,pode_conter,Depende da marca
+linguica_calabresa,lactose,pode_conter,Depende da marca
+linguica_calabresa,soja,pode_conter,Depende da marca
+linguica_calabresa,gluten,pode_conter,Depende da marca
+peixe,peixe,contem,
+peixe,carne,contem,
+peixe,origem_animal,contem,
+file_de_tilapia,peixe,contem,
+file_de_tilapia,carne,contem,
+file_de_tilapia,origem_animal,contem,
+atum_em_conserva,peixe,contem,
+atum_em_conserva,carne,contem,
+atum_em_conserva,origem_animal,contem,
+atum_em_conserva,soja,pode_conter,Pode ser conservado em óleo de soja
+sardinha_em_conserva,peixe,contem,
+sardinha_em_conserva,carne,contem,
+sardinha_em_conserva,origem_animal,contem,
+sardinha_em_conserva,soja,pode_conter,Pode ser conservada em óleo de soja

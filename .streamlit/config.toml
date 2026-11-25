@@ -1,0 +1,43 @@
+# Tema da DelícIA (decisão D43): horta e cozinha de casa.
+# Claro: creme de papel, verde-folha, tinta quase preta e terracota de destaque.
+# Escuro: horta à noite, verde-musgo e creme. Troca no menu ⋮ > Settings.
+# Fontes (Fraunces e Nunito) e decoração ficam em src/nutrimesa/visual.py.
+
+[theme]
+font = "sans-serif"
+headingFont = "serif"
+baseRadius = "1rem"
+buttonRadius = "full"
+showSidebarBorder = false
+
+[theme.light]
+primaryColor = "#2F6B3B"
+backgroundColor = "#FBF7EF"
+secondaryBackgroundColor = "#F2ECDD"
+textColor = "#1E2A20"
+borderColor = "#E3DAC6"
+linkColor = "#C2552D"
+greenColor = "#2F6B3B"
+orangeColor = "#C2552D"
+
+[theme.light.sidebar]
+backgroundColor = "#E7EEDC"
+secondaryBackgroundColor = "#FBF7EF"
+
+[theme.dark]
+primaryColor = "#8BC79A"
+backgroundColor = "#111811"
+secondaryBackgroundColor = "#1A241B"
+textColor = "#EFE9DA"
+borderColor = "#2C3A2D"
+linkColor = "#F0956A"
+greenColor = "#8BC79A"
+orangeColor = "#F0956A"
+
+[theme.dark.sidebar]
+backgroundColor = "#152016"
+secondaryBackgroundColor = "#1D2A1E"
+
+# sem os envios de estatística do Streamlit a cada abertura (deixavam o F5 mais pesado)
+[browser]
+gatherUsageStats = false

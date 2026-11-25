@@ -1,0 +1,97 @@
+﻿ingrediente_id,nome_canonico,categoria,unidade_base,tipo_ajuste,ingrediente_pai,observacao
+arroz,arroz,cereais_massas,g,linear,,
+macarrao,macarrão,cereais_massas,g,linear,,
+farinha_de_trigo,farinha de trigo,cereais_massas,g,linear,,
+fuba,fubá,cereais_massas,g,linear,,Não confundir com farinha de milho (entrada própria na TACO)
+farinha_de_mandioca,farinha de mandioca,cereais_massas,g,linear,,
+amido_de_milho,amido de milho,cereais_massas,g,linear,,
+feijao,feijão,leguminosas,g,linear,,Termo genérico; variedades têm ingredientes próprios
+feijao_carioca,feijão carioca,leguminosas,g,linear,feijao,
+feijao_preto,feijão preto,leguminosas,g,linear,feijao,
+ovo,ovo,ovos_laticinios,un,linear,,Peso médio por unidade ainda não definido (passo 4)
+leite,leite,ovos_laticinios,ml,linear,,TACO é por 100 g: converter ml em g exige densidade documentada (passo 4)
+creme_de_leite,creme de leite,ovos_laticinios,g,linear,,
+queijo_mussarela,queijo mussarela,ovos_laticinios,g,linear,,
+manteiga,manteiga,ovos_laticinios,g,linear,,
+frango,frango,carnes_pescados,g,linear,,Termo genérico; cortes têm ingredientes próprios
+peito_de_frango,peito de frango,carnes_pescados,g,linear,frango,
+coxa_de_frango,coxa de frango,carnes_pescados,g,linear,frango,
+sobrecoxa_de_frango,sobrecoxa de frango,carnes_pescados,g,linear,frango,
+carne_bovina_moida,carne bovina moída,carnes_pescados,g,linear,,
+carne_bovina_patinho,patinho,carnes_pescados,g,linear,,
+atum_em_conserva,atum em conserva,carnes_pescados,g,linear,,
+batata,batata,hortalicas,g,linear,,
+batata_doce,batata-doce,hortalicas,g,linear,,
+mandioca,mandioca,hortalicas,g,linear,,
+cenoura,cenoura,hortalicas,g,linear,,
+cebola,cebola,hortalicas,g,linear,,
+alho,alho,hortalicas,g,linear,,
+tomate,tomate,hortalicas,g,linear,,
+abobora,abóbora,hortalicas,g,linear,,Há várias variedades na TACO; sem escolha única
+abobrinha,abobrinha,hortalicas,g,linear,,
+chuchu,chuchu,hortalicas,g,linear,,
+couve,couve,hortalicas,g,linear,,
+pimentao,pimentão,hortalicas,g,linear,,
+milho_verde,milho verde,hortalicas,g,linear,,
+limao,limão,frutas,g,linear,,
+molho_de_tomate,molho de tomate,molhos_condimentos,g,linear,,
+extrato_de_tomate,extrato de tomate,molhos_condimentos,g,linear,,
+maionese,maionese,molhos_condimentos,g,linear,,
+azeite,azeite,gorduras_acucares,ml,revisar,,TACO é por 100 g: converter ml em g exige densidade documentada (passo 4)
+oleo_de_soja,óleo de soja,gorduras_acucares,ml,revisar,,TACO é por 100 g: converter ml em g exige densidade documentada (passo 4)
+acucar,açúcar,gorduras_acucares,g,linear,,
+sal,sal,molhos_condimentos,g,a_gosto,,
+caldo_de_galinha,caldo de galinha,molhos_condimentos,g,revisar,,Contém sal; revisar ao ajustar porções
+fermento_quimico,fermento químico,molhos_condimentos,g,nao_linear,,
+fermento_biologico,fermento biológico,molhos_condimentos,g,nao_linear,,
+cheiro_verde,cheiro-verde,molhos_condimentos,g,a_gosto,,"Mistura de ervas, não é um alimento único"
+vinagre,vinagre,molhos_condimentos,ml,revisar,,TACO é por 100 g: converter ml em g exige densidade documentada (passo 4)
+pimenta_do_reino,pimenta-do-reino,molhos_condimentos,g,a_gosto,,
+oregano,orégano,molhos_condimentos,g,a_gosto,,
+agua,água,outros,ml,linear,,Sem entrada na TACO; tratamento nutricional a definir por regra documentada
+aveia,aveia,cereais_massas,g,linear,,
+pao_frances,pão francês,cereais_massas,un,linear,,Peso médio por unidade ainda não definido
+pao_de_forma,pão de forma,cereais_massas,g,linear,,
+polvilho_azedo,polvilho azedo,cereais_massas,g,linear,,
+goma_de_tapioca,goma de tapioca,cereais_massas,g,linear,,
+farinha_de_milho_flocada,farinha de milho flocada,cereais_massas,g,linear,,O flocão usado no cuscuz; não é o fubá
+lentilha,lentilha,leguminosas,g,linear,,
+grao_de_bico,grão-de-bico,leguminosas,g,linear,,
+ervilha,ervilha,leguminosas,g,linear,,
+queijo_parmesao,queijo parmesão,ovos_laticinios,g,linear,,
+queijo_minas,queijo minas,ovos_laticinios,g,linear,,Assume meia cura; o frescal é outro produto
+requeijao,requeijão,ovos_laticinios,g,linear,,
+iogurte_natural,iogurte natural,ovos_laticinios,g,linear,,
+leite_condensado,leite condensado,ovos_laticinios,g,linear,,
+carne_bovina_acem,acém,carnes_pescados,g,linear,,
+carne_bovina_alcatra,alcatra,carnes_pescados,g,linear,,
+linguica_calabresa,linguiça calabresa,carnes_pescados,g,linear,,
+bacon,bacon,carnes_pescados,g,linear,,
+presunto,presunto,carnes_pescados,g,linear,,
+salsicha,salsicha,carnes_pescados,g,linear,,
+sardinha_em_conserva,sardinha em conserva,carnes_pescados,g,linear,,
+peixe,peixe,carnes_pescados,g,linear,,Termo genérico; espécies têm ingredientes próprios
+file_de_tilapia,filé de tilápia,carnes_pescados,g,linear,peixe,
+alface,alface,hortalicas,g,linear,,
+repolho,repolho,hortalicas,g,linear,,
+brocolis,brócolis,hortalicas,g,linear,,
+espinafre,espinafre,hortalicas,g,linear,,
+berinjela,berinjela,hortalicas,g,linear,,
+beterraba,beterraba,hortalicas,g,linear,,
+banana,banana,frutas,g,linear,,
+maca,maçã,frutas,g,linear,,
+laranja,laranja,frutas,g,linear,,
+coco_ralado,coco ralado,frutas,g,linear,,
+leite_de_coco,leite de coco,molhos_condimentos,ml,linear,,TACO é por 100 g: converter ml em g exige densidade documentada
+shoyu,shoyu,molhos_condimentos,ml,revisar,,Contém muito sal; revisar ao ajustar porções
+ketchup,ketchup,molhos_condimentos,g,linear,,
+mostarda,mostarda,molhos_condimentos,g,linear,,
+mel,mel,gorduras_acucares,g,linear,,
+chocolate_em_po,chocolate em pó,gorduras_acucares,g,linear,,
+batata_palha,batata palha,outros,g,linear,,
+louro,louro,molhos_condimentos,g,a_gosto,,
+canela,canela,molhos_condimentos,g,a_gosto,,
+colorau,colorau,molhos_condimentos,g,a_gosto,,
+cebolinha,cebolinha,molhos_condimentos,g,a_gosto,,
+salsinha,salsinha,molhos_condimentos,g,a_gosto,,
+coentro,coentro,molhos_condimentos,g,a_gosto,,

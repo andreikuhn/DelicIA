@@ -1,0 +1,36 @@
+# Segredos e configuração local
+.env
+.streamlit/secrets.toml
+.claude/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# Dados: o Excel original da TACO e arquivos gerados NÃO vão para o Git
+# (os termos de uso ainda estão em verificação; veja data/raw/README.md)
+data/raw/*
+!data/raw/.gitkeep
+!data/raw/README.md
+data/processed/*
+!data/processed/.gitkeep
+
+# Bancos locais
+*.sqlite
+*.sqlite3
+*.db
+
+# Editor / sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Resultado do rodar_testes.bat
+resultado_testes.txt
+servidor.log
+parar.flag

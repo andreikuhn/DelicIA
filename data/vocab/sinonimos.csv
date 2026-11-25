@@ -1,0 +1,189 @@
+﻿termo,ingrediente_id,tipo,status
+abóbora,abobora,canonico,proposto
+abobrinha,abobrinha,canonico,proposto
+abobrinhas,abobrinha,plural,proposto
+abobrinha italiana,abobrinha,variante,proposto
+açúcar,acucar,canonico,proposto
+açúcar refinado,acucar,variante,proposto
+água,agua,canonico,proposto
+alho,alho,canonico,proposto
+amido de milho,amido_de_milho,canonico,proposto
+maisena,amido_de_milho,marca_popular,proposto
+maizena,amido_de_milho,marca_popular,proposto
+arroz,arroz,canonico,proposto
+arroz branco,arroz,coloquial,proposto
+atum em conserva,atum_em_conserva,canonico,proposto
+atum em lata,atum_em_conserva,coloquial,proposto
+azeite,azeite,canonico,proposto
+azeite de oliva,azeite,variante,proposto
+azeite extra virgem,azeite,variante,proposto
+batata,batata,canonico,proposto
+batatas,batata,plural,proposto
+batata inglesa,batata,variante,proposto
+batata-doce,batata_doce,canonico,proposto
+caldo de galinha,caldo_de_galinha,canonico,proposto
+tablete de caldo de galinha,caldo_de_galinha,variante,proposto
+carne bovina moída,carne_bovina_moida,canonico,proposto
+carne moída,carne_bovina_moida,coloquial,proposto
+patinho,carne_bovina_patinho,canonico,proposto
+carne de patinho,carne_bovina_patinho,variante,proposto
+cebola,cebola,canonico,proposto
+cebolas,cebola,plural,proposto
+cenoura,cenoura,canonico,proposto
+cenouras,cenoura,plural,proposto
+cheiro-verde,cheiro_verde,canonico,proposto
+chuchu,chuchu,canonico,proposto
+chuchus,chuchu,plural,proposto
+couve,couve,canonico,proposto
+couve-manteiga,couve,variante,proposto
+coxa de frango,coxa_de_frango,canonico,proposto
+creme de leite,creme_de_leite,canonico,proposto
+extrato de tomate,extrato_de_tomate,canonico,proposto
+massa de tomate,extrato_de_tomate,regional,proposto
+farinha de mandioca,farinha_de_mandioca,canonico,proposto
+farinha de trigo,farinha_de_trigo,canonico,proposto
+feijão,feijao,canonico,proposto
+feijão carioca,feijao_carioca,canonico,proposto
+feijão preto,feijao_preto,canonico,proposto
+fermento biológico,fermento_biologico,canonico,proposto
+fermento químico,fermento_quimico,canonico,proposto
+fermento em pó,fermento_quimico,coloquial,proposto
+frango,frango,canonico,proposto
+carne de frango,frango,variante,proposto
+fubá,fuba,canonico,proposto
+leite,leite,canonico,proposto
+leite de vaca,leite,variante,proposto
+leite integral,leite,variante,proposto
+limão,limao,canonico,proposto
+limões,limao,plural,proposto
+limão tahiti,limao,variante,proposto
+macarrão,macarrao,canonico,proposto
+espaguete,macarrao,variante_formato,proposto
+spaghetti,macarrao,variante_formato,proposto
+maionese,maionese,canonico,proposto
+mandioca,mandioca,canonico,proposto
+aipim,mandioca,regional,proposto
+macaxeira,mandioca,regional,proposto
+manteiga,manteiga,canonico,proposto
+milho verde,milho_verde,canonico,proposto
+milho em conserva,milho_verde,coloquial,proposto
+milho em lata,milho_verde,coloquial,proposto
+molho de tomate,molho_de_tomate,canonico,proposto
+molho de tomate pronto,molho_de_tomate,variante,proposto
+óleo de soja,oleo_de_soja,canonico,proposto
+óleo,oleo_de_soja,coloquial,proposto
+orégano,oregano,canonico,proposto
+ovo,ovo,canonico,proposto
+ovos,ovo,plural,proposto
+ovo de galinha,ovo,variante,proposto
+peito de frango,peito_de_frango,canonico,proposto
+pimenta-do-reino,pimenta_do_reino,canonico,proposto
+pimentão,pimentao,canonico,proposto
+pimentões,pimentao,plural,proposto
+pimentão verde,pimentao,variante,proposto
+queijo mussarela,queijo_mussarela,canonico,proposto
+mozarela,queijo_mussarela,grafia,proposto
+mussarela,queijo_mussarela,grafia,proposto
+muçarela,queijo_mussarela,grafia,proposto
+sal,sal,canonico,proposto
+sal de cozinha,sal,coloquial,proposto
+sal refinado,sal,variante,proposto
+sobrecoxa de frango,sobrecoxa_de_frango,canonico,proposto
+sobrecoxa,sobrecoxa_de_frango,coloquial,proposto
+tomate,tomate,canonico,proposto
+tomates,tomate,plural,proposto
+vinagre,vinagre,canonico,proposto
+galinha,frango,coloquial,proposto
+aveia,aveia,canonico,proposto
+aveia em flocos,aveia,variante,proposto
+pão francês,pao_frances,canonico,proposto
+pão de sal,pao_frances,regional,proposto
+cacetinho,pao_frances,regional,proposto
+pão careca,pao_frances,regional,proposto
+pão jacó,pao_frances,regional,proposto
+pãozinho,pao_frances,coloquial,proposto
+pão de forma,pao_de_forma,canonico,proposto
+pão de sanduíche,pao_de_forma,coloquial,proposto
+polvilho azedo,polvilho_azedo,canonico,proposto
+polvilho,polvilho_azedo,coloquial,proposto
+goma de tapioca,goma_de_tapioca,canonico,proposto
+tapioca,goma_de_tapioca,coloquial,proposto
+massa de tapioca,goma_de_tapioca,variante,proposto
+farinha de milho flocada,farinha_de_milho_flocada,canonico,proposto
+flocão,farinha_de_milho_flocada,coloquial,proposto
+flocão de milho,farinha_de_milho_flocada,coloquial,proposto
+massa de cuscuz,farinha_de_milho_flocada,regional,proposto
+lentilha,lentilha,canonico,proposto
+grão-de-bico,grao_de_bico,canonico,proposto
+ervilha,ervilha,canonico,proposto
+ervilha em lata,ervilha,variante,proposto
+queijo parmesão,queijo_parmesao,canonico,proposto
+parmesão,queijo_parmesao,coloquial,proposto
+queijo ralado,queijo_parmesao,coloquial,proposto
+queijo minas,queijo_minas,canonico,proposto
+queijo meia cura,queijo_minas,variante,proposto
+requeijão,requeijao,canonico,proposto
+requeijão cremoso,requeijao,variante,proposto
+iogurte natural,iogurte_natural,canonico,proposto
+iogurte,iogurte_natural,coloquial,proposto
+leite condensado,leite_condensado,canonico,proposto
+leite moça,leite_condensado,marca_popular,proposto
+acém,carne_bovina_acem,canonico,proposto
+carne de acém,carne_bovina_acem,variante,proposto
+alcatra,carne_bovina_alcatra,canonico,proposto
+bife de alcatra,carne_bovina_alcatra,variante,proposto
+linguiça calabresa,linguica_calabresa,canonico,proposto
+calabresa,linguica_calabresa,coloquial,proposto
+linguiça,linguica_calabresa,coloquial,proposto
+bacon,bacon,canonico,proposto
+toucinho defumado,bacon,variante,proposto
+presunto,presunto,canonico,proposto
+salsicha,salsicha,canonico,proposto
+peixe,peixe,canonico,proposto
+filé de peixe,peixe,variante,proposto
+filé de tilápia,file_de_tilapia,canonico,proposto
+tilápia,file_de_tilapia,coloquial,proposto
+alface,alface,canonico,proposto
+repolho,repolho,canonico,proposto
+brócolis,brocolis,canonico,proposto
+brócolos,brocolis,grafia,proposto
+brócoli,brocolis,grafia,proposto
+espinafre,espinafre,canonico,proposto
+berinjela,berinjela,canonico,proposto
+beringela,berinjela,grafia,proposto
+beterraba,beterraba,canonico,proposto
+banana,banana,canonico,proposto
+maçã,maca,canonico,proposto
+laranja,laranja,canonico,proposto
+coco ralado,coco_ralado,canonico,proposto
+leite de coco,leite_de_coco,canonico,proposto
+shoyu,shoyu,canonico,proposto
+shoyo,shoyu,grafia,proposto
+molho shoyu,shoyu,variante,proposto
+molho de soja,shoyu,variante,proposto
+ketchup,ketchup,canonico,proposto
+catchup,ketchup,grafia,proposto
+mostarda,mostarda,canonico,proposto
+mel,mel,canonico,proposto
+chocolate em pó,chocolate_em_po,canonico,proposto
+achocolatado,chocolate_em_po,variante,proposto
+cacau em pó,chocolate_em_po,variante,proposto
+nescau,chocolate_em_po,marca_popular,proposto
+toddy,chocolate_em_po,marca_popular,proposto
+atum,atum_em_conserva,coloquial,proposto
+sardinha em conserva,sardinha_em_conserva,canonico,proposto
+sardinha,sardinha_em_conserva,coloquial,proposto
+sardinha em lata,sardinha_em_conserva,coloquial,proposto
+queijo prato,queijo_mussarela,variante,proposto
+batata palha,batata_palha,canonico,proposto
+louro,louro,canonico,proposto
+folha de louro,louro,variante,proposto
+canela,canela,canonico,proposto
+canela em pó,canela,variante,proposto
+colorau,colorau,canonico,proposto
+colorífico,colorau,variante,proposto
+urucum,colorau,variante,proposto
+cebolinha,cebolinha,canonico,proposto
+salsinha,salsinha,canonico,proposto
+salsa,salsinha,regional,proposto
+coentro,coentro,canonico,proposto

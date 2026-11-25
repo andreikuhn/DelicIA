@@ -1,0 +1,13 @@
+# Dependências do projeto. Novas bibliotecas entram quando o código que as usa existir.
+# Conferido com: Python 3.12.3/3.13, pandas 3.0.2; ollama 0.6.3, anthropic 2.3.0,
+# google-genai 2.33.0, supabase 2.33.0, streamlit 1.66.1 (testados com clientes falsos, sem chamada real).
+# As versões mínimas abaixo são estimativas e não foram testadas.
+pandas>=2.0
+# LLM: ollama (local), google-genai (Gemini, usado no site) e anthropic (Claude, opcional)
+ollama>=0.6
+google-genai>=2.33
+anthropic>=2.3
+# Site
+streamlit>=1.66
+supabase>=2.33
+pytest>=7.0

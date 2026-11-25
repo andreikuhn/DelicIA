@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DelícIA: propostas de login</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { font-family: 'Nunito', system-ui, sans-serif; color: #1E2A20; background: #FBF7EF; }
+h1, h2, .dl-nome { font-family: 'Fraunces', Georgia, serif; }
+::selection { background: #A9C4A0; }
+/* marca (mesmas regras do site) */
+.dl-marca { display: flex; align-items: center; gap: .7rem; }
+.dl-nome { font-weight: 700; line-height: 1; white-space: nowrap; }
+.dl-letra { display: inline-block; vertical-align: baseline; }
+.dl-letra-e { width: .5em; height: .5em; margin: 0 .02em 0 .03em; }
+.dl-letra-l { width: .27em; height: .76em; margin: 0 .03em -.02em .04em; }
+.dl-i { position: relative; display: inline-block; }
+.dl-acento { position: absolute; width: .3em; height: .23em; left: -.05em; top: .11em; }
+.dl-nome em { color: #C2552D; font-style: italic; }
+.dl-hero-svg { display: block; }
+
+/* seletor das propostas */
+.seletor { position: fixed; z-index: 50; left: 50%; bottom: 16px; transform: translateX(-50%); display: flex; gap: 4px;
+  padding: 4px; border-radius: 999px; background: #1E2A20; box-shadow: 0 8px 22px rgba(30, 42, 32, .3); }
+.seletor input { position: absolute; opacity: 0; pointer-events: none; }
+.seletor label { color: #D8E5CF; font: 700 14px/1 'Nunito', sans-serif; padding: 10px 16px; border-radius: 999px;
+  cursor: pointer; white-space: nowrap; }
+.seletor input:checked + label { background: #FBF7EF; color: #1E2A20; }
+.seletor input:focus-visible + label { outline: 2px solid #FBF7EF; outline-offset: 2px; }
+.proposta { display: none; min-height: 100vh; }
+body:has(#p1:checked) .p1, body:has(#p2:checked) .p2, body:has(#p3:checked) .p3 { display: block; }
+
+/* formulário: o mesmo nas três, com as cores da casa */
+.f-titulo { font-size: 1.6rem; margin: 0 0 .3rem; font-weight: 700; }
+.f-sub { margin: 0 0 1.1rem; color: #4A584B; }
+.abas { display: flex; gap: .4rem; flex-wrap: wrap; margin: 1rem 0 1.2rem; }
+.abas button { font: 700 .9rem 'Nunito', sans-serif; padding: .45rem 1rem; border-radius: 999px; cursor: pointer;
+  border: 1px solid #E3DAC6; background: #FFFDF8; color: #1E2A20; }
+.abas button[aria-selected="true"] { background: #2F6B3B; border-color: #2F6B3B; color: #FBF7EF; }
+.campo { display: grid; gap: .35rem; margin-bottom: .9rem; font-weight: 700; font-size: .92rem; }
+.campo input { font: 1rem 'Nunito', sans-serif; padding: .8rem 1rem; border-radius: 999px; border: 1px solid #E3DAC6;
+  background: #F2ECDD; color: #1E2A20; }
+.campo input::placeholder { color: #5C6757; }
+.campo input:focus { outline: 2px solid #2F6B3B; outline-offset: 1px; background: #fff; }
+.entrar { width: 100%; margin-top: .3rem; padding: .85rem; border: 0; border-radius: 999px; cursor: pointer;
+  background: #2F6B3B; color: #FBF7EF; font: 800 1rem 'Nunito', sans-serif;
+  box-shadow: 0 8px 18px rgba(46, 60, 40, .18); transition: background .15s, transform .15s; }
+.entrar:hover { background: #285c33; }
+.entrar:active { transform: translateY(1px); }
+.entrar:focus-visible, .abas button:focus-visible { outline: 2px solid #C2552D; outline-offset: 3px; }
+.aviso { font-size: .8rem; line-height: 1.5; color: #4A584B; max-width: 60rem; }
+.recursos { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; }
+.recursos li { display: flex; gap: .65rem; align-items: flex-start; }
+.recursos svg { flex: none; }
+.recursos strong { display: block; margin-bottom: .15rem; }
+.recursos span { font-size: .9rem; color: #4A584B; line-height: 1.45; }
+@media (max-width: 900px) { .recursos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .recursos { grid-template-columns: 1fr; } }
+
+/* ====================================== 1. MESA POSTA
+   Toalha xadrez bem clarinha, a tigela no centro como um prato servido e o login
+   como um cartão de receita apoiado na mesa. Tudo centralizado, bem acolhedor. */
+.p1 {
+  background-color: #FBF7EF;
+  background-image:
+    linear-gradient(90deg, rgba(169, 196, 160, .22) 50%, transparent 50%),
+    linear-gradient(rgba(169, 196, 160, .22) 50%, transparent 50%);
+  background-size: 56px 56px;
+}
+.p1 .pagina { max-width: 1040px; margin: 0 auto; padding: 40px 20px 110px; }
+.p1 .topo { display: flex; justify-content: center; margin-bottom: 20px; }
+.p1 .mesa { display: grid; grid-template-columns: 1fr 420px; gap: 48px; align-items: center; }
+.p1 .prato { text-align: center; }
+.p1 .prato .disco { width: min(440px, 100%); aspect-ratio: 1; margin: 0 auto; border-radius: 50%;
+  background: radial-gradient(circle, #FFFDF8 0 58%, #F3EEE2 58% 61%, #FFFDF8 61%);
+  box-shadow: 0 2px 0 #E3DAC6, 0 26px 50px rgba(46, 60, 40, .16); display: grid; place-items: center; }
+.p1 .prato .dl-hero-svg { width: 78%; }
+.p1 h1 { font-size: clamp(2rem, 3.6vw, 2.9rem); line-height: 1.08; margin: 28px auto 10px; max-width: 15em; text-wrap: balance; }
+.p1 .prato p { font-size: 1.08rem; color: #4A584B; max-width: 30em; margin: 0 auto; line-height: 1.55; }
+.p1 .cartao { background: #FFFDF8; border-radius: 1.4rem; padding: 1.8rem 1.8rem 1.4rem;
+  box-shadow: 0 2px 0 #E3DAC6, 0 18px 40px rgba(46, 60, 40, .14); border: 1px solid #E3DAC6; position: relative; }
+.p1 .cartao::before { content: ""; position: absolute; left: 1.8rem; right: 1.8rem; top: .9rem; border-top: 2px dashed #A9C4A0; }
+.p1 .cartao .f-titulo { margin-top: .6rem; }
+.p1 .rodape { margin-top: 48px; background: rgba(255, 253, 248, .86); border-radius: 1.4rem; padding: 1.4rem 1.6rem; }
+.p1 .rodape .aviso { margin: 1.2rem 0 0; }
+@media (max-width: 860px) {
+  .p1 .mesa { grid-template-columns: 1fr; gap: 28px; }
+  .p1 .prato .disco { width: min(260px, 70vw); }
+}
+
+/* ====================================== 2. CADERNO DE RECEITAS
+   O mais perto do que era: título grande com a tigela à esquerda; o login vira uma
+   página de caderno pautado, com margem vermelha e uma fita adesiva segurando. */
+.p2 { background:
+    radial-gradient(60rem 30rem at 110% -10%, #D8E5CF 0%, transparent 60%),
+    radial-gradient(40rem 24rem at -10% 110%, #D8E5CF 0%, transparent 60%), #FBF7EF; }
+.p2 .pagina { max-width: 1120px; margin: 0 auto; padding: 48px 24px 110px; }
+.p2 .grade { display: grid; grid-template-columns: 1.1fr .9fr; gap: 56px; align-items: center; margin-top: 18px; }
+.p2 h1 { font-size: clamp(2.4rem, 4.8vw, 3.8rem); line-height: 1.04; margin: 0 0 14px; text-wrap: balance; }
+.p2 h1 em { color: #2F6B3B; }
+.p2 .sub { font-size: 1.15rem; color: #4A584B; max-width: 30em; margin: 0 0 8px; line-height: 1.55; }
+.p2 .dl-hero-svg { max-width: 430px; margin: 0 auto; filter: drop-shadow(0 18px 24px rgba(46, 60, 40, 0.10)); }
+.p2 .folha-caderno { position: relative; background: #FFFEFA; border-radius: .5rem 1.2rem 1.2rem .5rem;
+  padding: 2.4rem 1.8rem 1.6rem 3.4rem; box-shadow: 0 2px 0 #E3DAC6, 0 20px 44px rgba(46, 60, 40, .14);
+  background-image: linear-gradient(90deg, transparent 2.3rem, rgba(194, 85, 45, .45) 2.3rem 2.4rem, transparent 2.4rem),
+                    repeating-linear-gradient(transparent 0 1.95rem, #E6EEF2 1.95rem 2rem); }
+.p2 .folha-caderno::before { content: ""; position: absolute; top: -14px; left: 50%; width: 120px; height: 30px;
+  transform: translateX(-50%) rotate(-3deg); background: rgba(226, 169, 59, .55); border-radius: 3px; }
+.p2 .furos { position: absolute; left: .9rem; top: 2.2rem; bottom: 2.2rem; display: flex; flex-direction: column;
+  justify-content: space-between; }
+.p2 .furos i { width: 12px; height: 12px; border-radius: 50%; background: #F2ECDD; box-shadow: inset 0 1px 2px rgba(0, 0, 0, .15); }
+.p2 .f-titulo { font-style: italic; color: #2F6B3B; }
+.p2 .campo input { background: #fff; }
+.p2 .base { margin-top: 40px; }
+.p2 .base .aviso { margin-top: 1.2rem; }
+@media (max-width: 860px) {
+  .p2 .grade { grid-template-columns: 1fr; gap: 32px; }
+  .p2 .dl-hero-svg { max-width: 280px; }
+}
+
+/* ====================================== 3. HORTA NO FIM DE TARDE
+   Faixa de horta em cima (verde-sálvia com raminhos e a tigela grande), uma onda
+   que desce para o papel creme, e o login pousando bem na linha entre os dois. */
+.p3 { background: #FBF7EF; }
+.p3 .horta { background: linear-gradient(180deg, #DCE8D2, #D8E5CF); padding: 32px 20px 120px; position: relative;
+  overflow: hidden; }
+.p3 .horta::after { content: ""; position: absolute; left: -5%; right: -5%; bottom: -60px; height: 120px;
+  background: #FBF7EF; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+.p3 .horta .ramo-a { position: absolute; left: 3%; bottom: 70px; opacity: .8; }
+.p3 .horta .ramo-b { position: absolute; right: 3%; top: 60px; transform: scaleX(-1); opacity: .8; }
+.p3 .topo { max-width: 1080px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.p3 .topo small { color: #2F6B3B; font-weight: 700; }
+.p3 .chamada { max-width: 1080px; margin: 24px auto 0; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+  position: relative; z-index: 1; }
+.p3 h1 { font-size: clamp(2.3rem, 4.6vw, 3.6rem); line-height: 1.05; margin: 0 0 14px; text-wrap: balance; }
+.p3 .chamada p { font-size: 1.12rem; color: #44533f; max-width: 28em; line-height: 1.55; margin: 0; }
+.p3 .dl-hero-svg { max-width: 400px; margin-left: auto; }
+.p3 .pouso { max-width: 1080px; margin: -70px auto 0; padding: 0 20px 110px; position: relative; z-index: 2;
+  display: grid; grid-template-columns: 440px 1fr; gap: 48px; align-items: start; }
+.p3 .cartao { background: #FFFDF8; border-radius: 1.6rem; padding: 1.8rem; border: 1px solid #E3DAC6;
+  box-shadow: 0 22px 46px rgba(46, 60, 40, .16); }
+.p3 .lado { padding-top: 96px; }
+.p3 .lado .recursos { grid-template-columns: 1fr 1fr; }
+.p3 .lado .aviso { margin-top: 1.6rem; }
+@media (max-width: 860px) {
+  .p3 .chamada { grid-template-columns: 1fr; }
+  .p3 .dl-hero-svg { max-width: 240px; margin: 0 auto; }
+  .p3 .pouso { grid-template-columns: 1fr; margin-top: -60px; }
+  .p3 .lado { padding-top: 0; }
+  .p3 .horta .ramo-a, .p3 .horta .ramo-b, .p3 .topo small { display: none; }
+}
+@media (max-width: 520px) { .p3 .lado .recursos { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="seletor" role="radiogroup" aria-label="Proposta">
+  <input type="radio" name="p" id="p1" checked><label for="p1">1 · Mesa posta</label>
+  <input type="radio" name="p" id="p2"><label for="p2">2 · Caderno</label>
+  <input type="radio" name="p" id="p3"><label for="p3">3 · Horta</label>
+</div>
+
+<main class="proposta p1">
+  <div class="pagina">
+    <div class="topo"><div class="dl-marca"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="52" height="52" role="img" aria-label="Selo da DelícIA"><circle cx="32" cy="32" r="31" fill="#D8E5CF"/><path d="M12 33 H52 A20 20 0 0 1 12 33 Z" fill="#2F6B3B"/><path d="M15 33 H49" stroke="#FBF7EF" stroke-width="2.5" stroke-linecap="round"/><path d="M32 33 C 31 26, 30 21, 26 16" stroke="#2F6B3B" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M27 17 C 20 15, 17 20, 18 25 C 24 25, 28 22, 27 17 Z" fill="#5E9A5C"/><path d="M31 24 C 35 17, 42 17, 44 21 C 40 26, 34 26, 31 24 Z" fill="#2F6B3B"/><path d="M47 6.5 Q 47.99 11.01 52.5 12 Q 47.99 12.99 47 17.5 Q 46.01 12.99 41.5 12 Q 46.01 11.01 47 6.5 Z" fill="#C2552D"/></svg><span class="dl-nome" role="img" aria-label="DelícIA" style="font-size:2rem">D<svg class="dl-letra dl-letra-e" viewBox="0 0 50 50" aria-hidden="true"><path d="M25 25 L42.62 39.78 A23 23 0 1 1 48 25 Z" fill="#4F8F2A"/><path d="M25 25 L39.17 36.89 A18.5 18.5 0 1 1 43.5 25 Z" fill="#D9EDA8"/><path d="M25 25 L25.0 8.0" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L39.8 16.5" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L10.2 16.5" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L10.2 33.5" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L25.0 42.0" stroke="#4F8F2A" stroke-width="1.6"/><circle cx="25" cy="25" r="2.4" fill="#4F8F2A"/><rect x="2" y="21.8" width="46" height="6.4" rx="3.2" fill="#1E2A20"/></svg><svg class="dl-letra dl-letra-l" viewBox="0 0 30 84" aria-hidden="true"><path d="M15 22 C 10 12, 6 8, 3 2" stroke="#2F6B3B" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M15 22 C 15 12, 16 6, 15 0" stroke="#5E9A5C" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M15 22 C 20 12, 24 8, 27 3" stroke="#2F6B3B" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M6 24 C 6 19, 24 19, 24 24 L 16.5 81 C 16 84, 14 84, 13.5 81 Z" fill="#E8833A"/><path d="M9 36 H14 M17 47 H21 M10 57 H14.5 M16.5 66 H19" stroke="#1E2A20" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/></svg><span class="dl-i">ı<svg class="dl-acento" viewBox="0 0 34 26" aria-hidden="true"><path d="M3 23 C 6 10, 18 2, 31 3 C 29 15, 17 24, 3 23 Z" fill="#2F6B3B"/><path d="M5 21 C 13 15, 21 9, 28 5" stroke="#FBF7EF" stroke-opacity="0.6" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>c<em>IA</em></span></div></div>
+    <div class="mesa">
+      <section class="prato">
+        <div class="disco"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 330" width="100%" role="img" aria-label="Ilustração de uma tigela de salada fresca" class="dl-hero-svg"> <path d="M60 210 C 20 140, 70 50, 170 46 C 260 40, 360 70, 382 150 C 404 236, 330 300, 220 300 C 130 300, 92 268, 60 210 Z" fill="#D8E5CF"/> <path d="M84 96 C 120 40, 230 24, 300 60" stroke="#A9C4A0" stroke-width="2" fill="none" stroke-dasharray="2 9" stroke-linecap="round"/> <path d="M178 98 C 168 80, 190 70, 180 50" stroke="#5B6B5C" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.55"/> <path d="M214 92 C 204 72, 228 62, 216 38" stroke="#5B6B5C" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.55"/> <path d="M182 30 Q 183.8 38.2 192 40 Q 183.8 41.8 182 50 Q 180.2 41.8 172 40 Q 180.2 38.2 182 30 Z" fill="#C2552D"/><path d="M222 20 Q 223.08 24.92 228 26 Q 223.08 27.08 222 32 Q 220.92 27.08 216 26 Q 220.92 24.92 222 20 Z" fill="#E2A93B"/><path d="M250 50 Q 250.72 53.28 254 54 Q 250.72 54.72 250 58 Q 249.28 54.72 246 54 Q 249.28 53.28 250 50 Z" fill="#C2552D"/> <g transform="translate(110 150) rotate(-40) scale(1.25)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g><g transform="translate(150 128) rotate(-70) scale(1.2)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#2F6B3B"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> <g transform="translate(250 112) rotate(-110) scale(1.25)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#2F6B3B"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g><g transform="translate(282 140) rotate(-140) scale(1.2)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> <g transform="translate(190 118) rotate(-95) scale(1.0)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#A9C4A0"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> <circle cx="218" cy="140" r="27" fill="#D9462F"/> <circle cx="218" cy="140" r="20" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/> <ellipse cx="214" cy="138" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(20 214 138)"/><ellipse cx="226" cy="146" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(-30 226 146)"/><ellipse cx="206" cy="150" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(60 206 150)"/><ellipse cx="220" cy="128" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(-70 220 128)"/> <circle cx="152" cy="150" r="22" fill="#E2A93B"/> <circle cx="152" cy="150" r="16" fill="#FFF3C4" opacity="0.85"/> <path d="M152 134 V166 M136 150 H168 M141 139 L163 161 M163 139 L141 161" stroke="#E2A93B" stroke-width="1.6"/> <rect x="262" y="118" width="9" height="46" rx="4.5" fill="#E8833A" transform="rotate(28 266 141)"/> <rect x="276" y="122" width="9" height="40" rx="4.5" fill="#E8833A" transform="rotate(40 280 142)"/> <path d="M86 160 H334 C 330 236, 278 276, 210 276 C 142 276, 90 236, 86 160 Z" fill="#FFFDF8" stroke="#1E2A20" stroke-width="3"/> <path d="M98 184 C 150 196, 270 196, 322 184" stroke="#2F6B3B" stroke-width="5" fill="none" stroke-linecap="round"/> <path d="M104 200 C 156 212, 264 212, 316 200" stroke="#C2552D" stroke-width="2" fill="none" stroke-dasharray="1 8" stroke-linecap="round"/> <path d="M80 160 H340" stroke="#1E2A20" stroke-width="3.5" stroke-linecap="round"/> <ellipse cx="210" cy="292" rx="70" ry="7" fill="#1E2A20" opacity="0.10"/> <g transform="translate(44 260) rotate(-20) scale(0.7)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g><g transform="translate(352 82) rotate(30) scale(0.6)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> </svg></div>
+        <h1>Cozinhe o que você já tem em casa.</h1>
+        <p>A DelícIA olha sua geladeira com você e cria receitas na medida da sua dieta.</p>
+      </section>
+      <section class="cartao" aria-label="Acesso">
+      <h2 class="f-titulo">Que bom te ver</h2>
+      <p class="f-sub">Entre para continuar suas receitas.</p>
+      <div class="abas" role="tablist"><button role="tab" aria-selected="true">Entrar</button><button role="tab" aria-selected="false">Criar conta</button><button role="tab" aria-selected="false">Esqueci a senha</button></div>
+      <form onsubmit="return false">
+        <label class="campo"><span>E-mail</span><input type="email" autocomplete="email" placeholder="voce@email.com"></label>
+        <label class="campo"><span>Senha</span><input type="password" autocomplete="current-password"></label>
+        <button class="entrar">Entrar</button>
+      </form></section>
+    </div>
+    <div class="rodape"><ul class="recursos"><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="18" height="26" rx="4"/><path d="M7 13 H25 M11 7 V10 M11 17 V22"/></svg><div><strong>O que tem na geladeira</strong><span>Diga os ingredientes e a IA cria receitas na hora.</span></div></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="12" r="4"/><circle cx="22" cy="12" r="4"/><path d="M4 26 C 5 20, 17 20, 18 26 M15 26 C 16 20, 28 20, 29 26"/></svg><div><strong>Na medida da sua dieta</strong><span>As metas do seu nutricionista guiam cada porção.</span></div></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3 L27 7 V15 C 27 22, 22 27, 16 29 C 10 27, 5 22, 5 15 V7 Z"/><path d="M11 16 L15 20 L22 12"/></svg><div><strong>Cuidado com você</strong><span>Alergias e intolerâncias conferidas em cada resposta.</span></div></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="6" width="24" height="22" rx="4"/><path d="M4 13 H28 M10 3 V9 M22 3 V9 M10 19 H13 M17 19 H20 M10 23 H13"/></svg><div><strong>Semana planejada</strong><span>Cardápio com calorias, pronto para baixar.</span></div></li></ul><p class="aviso">Projeto acadêmico. Receitas e nutrientes são estimativas da IA. Os cálculos de gasto energético e de proteína são aproximados e não substituem a consulta com um nutricionista.</p></div>
+  </div>
+</main>
+
+<main class="proposta p2">
+  <div class="pagina">
+    <div class="dl-marca"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="52" height="52" role="img" aria-label="Selo da DelícIA"><circle cx="32" cy="32" r="31" fill="#D8E5CF"/><path d="M12 33 H52 A20 20 0 0 1 12 33 Z" fill="#2F6B3B"/><path d="M15 33 H49" stroke="#FBF7EF" stroke-width="2.5" stroke-linecap="round"/><path d="M32 33 C 31 26, 30 21, 26 16" stroke="#2F6B3B" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M27 17 C 20 15, 17 20, 18 25 C 24 25, 28 22, 27 17 Z" fill="#5E9A5C"/><path d="M31 24 C 35 17, 42 17, 44 21 C 40 26, 34 26, 31 24 Z" fill="#2F6B3B"/><path d="M47 6.5 Q 47.99 11.01 52.5 12 Q 47.99 12.99 47 17.5 Q 46.01 12.99 41.5 12 Q 46.01 11.01 47 6.5 Z" fill="#C2552D"/></svg><span class="dl-nome" role="img" aria-label="DelícIA" style="font-size:2.4rem">D<svg class="dl-letra dl-letra-e" viewBox="0 0 50 50" aria-hidden="true"><path d="M25 25 L42.62 39.78 A23 23 0 1 1 48 25 Z" fill="#4F8F2A"/><path d="M25 25 L39.17 36.89 A18.5 18.5 0 1 1 43.5 25 Z" fill="#D9EDA8"/><path d="M25 25 L25.0 8.0" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L39.8 16.5" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L10.2 16.5" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L10.2 33.5" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L25.0 42.0" stroke="#4F8F2A" stroke-width="1.6"/><circle cx="25" cy="25" r="2.4" fill="#4F8F2A"/><rect x="2" y="21.8" width="46" height="6.4" rx="3.2" fill="#1E2A20"/></svg><svg class="dl-letra dl-letra-l" viewBox="0 0 30 84" aria-hidden="true"><path d="M15 22 C 10 12, 6 8, 3 2" stroke="#2F6B3B" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M15 22 C 15 12, 16 6, 15 0" stroke="#5E9A5C" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M15 22 C 20 12, 24 8, 27 3" stroke="#2F6B3B" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M6 24 C 6 19, 24 19, 24 24 L 16.5 81 C 16 84, 14 84, 13.5 81 Z" fill="#E8833A"/><path d="M9 36 H14 M17 47 H21 M10 57 H14.5 M16.5 66 H19" stroke="#1E2A20" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/></svg><span class="dl-i">ı<svg class="dl-acento" viewBox="0 0 34 26" aria-hidden="true"><path d="M3 23 C 6 10, 18 2, 31 3 C 29 15, 17 24, 3 23 Z" fill="#2F6B3B"/><path d="M5 21 C 13 15, 21 9, 28 5" stroke="#FBF7EF" stroke-opacity="0.6" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>c<em>IA</em></span></div>
+    <div class="grade">
+      <section>
+        <h1>Cozinhe o que você <em>já tem</em> em casa.</h1>
+        <p class="sub">A DelícIA olha sua geladeira com você, cria receitas na hora, ajusta as porções à sua dieta e explica o preparo passo a passo.</p>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 330" width="100%" role="img" aria-label="Ilustração de uma tigela de salada fresca" class="dl-hero-svg"> <path d="M60 210 C 20 140, 70 50, 170 46 C 260 40, 360 70, 382 150 C 404 236, 330 300, 220 300 C 130 300, 92 268, 60 210 Z" fill="#D8E5CF"/> <path d="M84 96 C 120 40, 230 24, 300 60" stroke="#A9C4A0" stroke-width="2" fill="none" stroke-dasharray="2 9" stroke-linecap="round"/> <path d="M178 98 C 168 80, 190 70, 180 50" stroke="#5B6B5C" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.55"/> <path d="M214 92 C 204 72, 228 62, 216 38" stroke="#5B6B5C" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.55"/> <path d="M182 30 Q 183.8 38.2 192 40 Q 183.8 41.8 182 50 Q 180.2 41.8 172 40 Q 180.2 38.2 182 30 Z" fill="#C2552D"/><path d="M222 20 Q 223.08 24.92 228 26 Q 223.08 27.08 222 32 Q 220.92 27.08 216 26 Q 220.92 24.92 222 20 Z" fill="#E2A93B"/><path d="M250 50 Q 250.72 53.28 254 54 Q 250.72 54.72 250 58 Q 249.28 54.72 246 54 Q 249.28 53.28 250 50 Z" fill="#C2552D"/> <g transform="translate(110 150) rotate(-40) scale(1.25)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g><g transform="translate(150 128) rotate(-70) scale(1.2)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#2F6B3B"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> <g transform="translate(250 112) rotate(-110) scale(1.25)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#2F6B3B"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g><g transform="translate(282 140) rotate(-140) scale(1.2)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> <g transform="translate(190 118) rotate(-95) scale(1.0)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#A9C4A0"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> <circle cx="218" cy="140" r="27" fill="#D9462F"/> <circle cx="218" cy="140" r="20" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/> <ellipse cx="214" cy="138" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(20 214 138)"/><ellipse cx="226" cy="146" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(-30 226 146)"/><ellipse cx="206" cy="150" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(60 206 150)"/><ellipse cx="220" cy="128" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(-70 220 128)"/> <circle cx="152" cy="150" r="22" fill="#E2A93B"/> <circle cx="152" cy="150" r="16" fill="#FFF3C4" opacity="0.85"/> <path d="M152 134 V166 M136 150 H168 M141 139 L163 161 M163 139 L141 161" stroke="#E2A93B" stroke-width="1.6"/> <rect x="262" y="118" width="9" height="46" rx="4.5" fill="#E8833A" transform="rotate(28 266 141)"/> <rect x="276" y="122" width="9" height="40" rx="4.5" fill="#E8833A" transform="rotate(40 280 142)"/> <path d="M86 160 H334 C 330 236, 278 276, 210 276 C 142 276, 90 236, 86 160 Z" fill="#FFFDF8" stroke="#1E2A20" stroke-width="3"/> <path d="M98 184 C 150 196, 270 196, 322 184" stroke="#2F6B3B" stroke-width="5" fill="none" stroke-linecap="round"/> <path d="M104 200 C 156 212, 264 212, 316 200" stroke="#C2552D" stroke-width="2" fill="none" stroke-dasharray="1 8" stroke-linecap="round"/> <path d="M80 160 H340" stroke="#1E2A20" stroke-width="3.5" stroke-linecap="round"/> <ellipse cx="210" cy="292" rx="70" ry="7" fill="#1E2A20" opacity="0.10"/> <g transform="translate(44 260) rotate(-20) scale(0.7)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g><g transform="translate(352 82) rotate(30) scale(0.6)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> </svg>
+      </section>
+      <section class="folha-caderno" aria-label="Acesso"><div class="furos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        
+      <h2 class="f-titulo">Bem-vindo de volta à cozinha</h2>
+      
+      <div class="abas" role="tablist"><button role="tab" aria-selected="true">Entrar</button><button role="tab" aria-selected="false">Criar conta</button><button role="tab" aria-selected="false">Esqueci a senha</button></div>
+      <form onsubmit="return false">
+        <label class="campo"><span>E-mail</span><input type="email" autocomplete="email" placeholder="voce@email.com"></label>
+        <label class="campo"><span>Senha</span><input type="password" autocomplete="current-password"></label>
+        <button class="entrar">Entrar</button>
+      </form></section>
+    </div>
+    <div class="base"><div class="dl-divisor"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 24" width="100%" height="24" preserveAspectRatio="none" aria-hidden="true"><path d="M0 12 Q 25 2 50 12 T 100 12 T 150 12 T 200 12 T 250 12 M350 12 Q 375 2 400 12 T 450 12 T 500 12 T 550 12 T 600 12" stroke="#A9C4A0" stroke-width="2" fill="none"/><g transform="translate(282 12) rotate(-20) scale(0.7)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g></svg></div><ul class="recursos"><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="18" height="26" rx="4"/><path d="M7 13 H25 M11 7 V10 M11 17 V22"/></svg><div><strong>O que tem na geladeira</strong><span>Diga os ingredientes e a IA cria receitas na hora.</span></div></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="12" r="4"/><circle cx="22" cy="12" r="4"/><path d="M4 26 C 5 20, 17 20, 18 26 M15 26 C 16 20, 28 20, 29 26"/></svg><div><strong>Na medida da sua dieta</strong><span>As metas do seu nutricionista guiam cada porção.</span></div></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3 L27 7 V15 C 27 22, 22 27, 16 29 C 10 27, 5 22, 5 15 V7 Z"/><path d="M11 16 L15 20 L22 12"/></svg><div><strong>Cuidado com você</strong><span>Alergias e intolerâncias conferidas em cada resposta.</span></div></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="6" width="24" height="22" rx="4"/><path d="M4 13 H28 M10 3 V9 M22 3 V9 M10 19 H13 M17 19 H20 M10 23 H13"/></svg><div><strong>Semana planejada</strong><span>Cardápio com calorias, pronto para baixar.</span></div></li></ul><p class="aviso">Projeto acadêmico. Receitas e nutrientes são estimativas da IA. Os cálculos de gasto energético e de proteína são aproximados e não substituem a consulta com um nutricionista.</p></div>
+  </div>
+</main>
+
+<main class="proposta p3">
+  <div class="horta">
+    <span class="ramo-a"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" width="150" aria-hidden="true"><path d="M10 84 C 50 70, 90 50, 140 14" stroke="#2F6B3B" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M40 70 C 48 56, 64 58, 66 68 C 54 74, 44 72, 40 70 Z" fill="none" stroke="#2F6B3B" stroke-width="2" stroke-linejoin="round"/><path d="M60 54 C 52 40, 36 42, 34 52 C 46 58, 56 56, 60 54 Z" fill="none" stroke="#2F6B3B" stroke-width="2" stroke-linejoin="round"/><path d="M78 46 C 86 32, 102 34, 104 44 C 92 50, 82 48, 78 46 Z" fill="none" stroke="#2F6B3B" stroke-width="2" stroke-linejoin="round"/><path d="M96 32 C 88 18, 72 20, 70 30 C 82 36, 92 34, 96 32 Z" fill="none" stroke="#2F6B3B" stroke-width="2" stroke-linejoin="round"/><path d="M112 26 C 120 12, 136 14, 138 24 C 126 30, 116 28, 112 26 Z" fill="none" stroke="#2F6B3B" stroke-width="2" stroke-linejoin="round"/><path d="M146 5 Q 146.9 9.1 151 10 Q 146.9 10.9 146 15 Q 145.1 10.9 141 10 Q 145.1 9.1 146 5 Z" fill="#C2552D"/></svg></span><span class="ramo-b"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" width="150" aria-hidden="true"><path d="M10 84 C 50 70, 90 50, 140 14" stroke="#2F6B3B" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M40 70 C 48 56, 64 58, 66 68 C 54 74, 44 72, 40 70 Z" fill="none" stroke="#2F6B3B" stroke-width="2" stroke-linejoin="round"/><path d="M60 54 C 52 40, 36 42, 34 52 C 46 58, 56 56, 60 54 Z" fill="none" stroke="#2F6B3B" stroke-width="2" stroke-linejoin="round"/><path d="M78 46 C 86 32, 102 34, 104 44 C 92 50, 82 48, 78 46 Z" fill="none" stroke="#2F6B3B" stroke-width="2" stroke-linejoin="round"/><path d="M96 32 C 88 18, 72 20, 70 30 C 82 36, 92 34, 96 32 Z" fill="none" stroke="#2F6B3B" stroke-width="2" stroke-linejoin="round"/><path d="M112 26 C 120 12, 136 14, 138 24 C 126 30, 116 28, 112 26 Z" fill="none" stroke="#2F6B3B" stroke-width="2" stroke-linejoin="round"/><path d="M146 5 Q 146.9 9.1 151 10 Q 146.9 10.9 146 15 Q 145.1 10.9 141 10 Q 145.1 9.1 146 5 Z" fill="#C2552D"/></svg></span>
+    <div class="topo"><div class="dl-marca"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="52" height="52" role="img" aria-label="Selo da DelícIA"><circle cx="32" cy="32" r="31" fill="#D8E5CF"/><path d="M12 33 H52 A20 20 0 0 1 12 33 Z" fill="#2F6B3B"/><path d="M15 33 H49" stroke="#FBF7EF" stroke-width="2.5" stroke-linecap="round"/><path d="M32 33 C 31 26, 30 21, 26 16" stroke="#2F6B3B" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M27 17 C 20 15, 17 20, 18 25 C 24 25, 28 22, 27 17 Z" fill="#5E9A5C"/><path d="M31 24 C 35 17, 42 17, 44 21 C 40 26, 34 26, 31 24 Z" fill="#2F6B3B"/><path d="M47 6.5 Q 47.99 11.01 52.5 12 Q 47.99 12.99 47 17.5 Q 46.01 12.99 41.5 12 Q 46.01 11.01 47 6.5 Z" fill="#C2552D"/></svg><span class="dl-nome" role="img" aria-label="DelícIA" style="font-size:2rem">D<svg class="dl-letra dl-letra-e" viewBox="0 0 50 50" aria-hidden="true"><path d="M25 25 L42.62 39.78 A23 23 0 1 1 48 25 Z" fill="#4F8F2A"/><path d="M25 25 L39.17 36.89 A18.5 18.5 0 1 1 43.5 25 Z" fill="#D9EDA8"/><path d="M25 25 L25.0 8.0" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L39.8 16.5" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L10.2 16.5" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L10.2 33.5" stroke="#4F8F2A" stroke-width="1.6"/><path d="M25 25 L25.0 42.0" stroke="#4F8F2A" stroke-width="1.6"/><circle cx="25" cy="25" r="2.4" fill="#4F8F2A"/><rect x="2" y="21.8" width="46" height="6.4" rx="3.2" fill="#1E2A20"/></svg><svg class="dl-letra dl-letra-l" viewBox="0 0 30 84" aria-hidden="true"><path d="M15 22 C 10 12, 6 8, 3 2" stroke="#2F6B3B" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M15 22 C 15 12, 16 6, 15 0" stroke="#5E9A5C" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M15 22 C 20 12, 24 8, 27 3" stroke="#2F6B3B" stroke-width="3.4" fill="none" stroke-linecap="round"/><path d="M6 24 C 6 19, 24 19, 24 24 L 16.5 81 C 16 84, 14 84, 13.5 81 Z" fill="#E8833A"/><path d="M9 36 H14 M17 47 H21 M10 57 H14.5 M16.5 66 H19" stroke="#1E2A20" stroke-opacity="0.35" stroke-width="2" stroke-linecap="round"/></svg><span class="dl-i">ı<svg class="dl-acento" viewBox="0 0 34 26" aria-hidden="true"><path d="M3 23 C 6 10, 18 2, 31 3 C 29 15, 17 24, 3 23 Z" fill="#2F6B3B"/><path d="M5 21 C 13 15, 21 9, 28 5" stroke="#FBF7EF" stroke-opacity="0.6" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg></span>c<em>IA</em></span></div><small>sua cozinha, com um toque de IA</small></div>
+    <div class="chamada">
+      <div><h1>O jantar começa no que já está na geladeira.</h1>
+        <p>Receitas na hora, com as porções certas para as metas de calorias e de proteína do seu nutricionista.</p></div>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 330" width="100%" role="img" aria-label="Ilustração de uma tigela de salada fresca" class="dl-hero-svg"> <path d="M60 210 C 20 140, 70 50, 170 46 C 260 40, 360 70, 382 150 C 404 236, 330 300, 220 300 C 130 300, 92 268, 60 210 Z" fill="#D8E5CF"/> <path d="M84 96 C 120 40, 230 24, 300 60" stroke="#A9C4A0" stroke-width="2" fill="none" stroke-dasharray="2 9" stroke-linecap="round"/> <path d="M178 98 C 168 80, 190 70, 180 50" stroke="#5B6B5C" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.55"/> <path d="M214 92 C 204 72, 228 62, 216 38" stroke="#5B6B5C" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.55"/> <path d="M182 30 Q 183.8 38.2 192 40 Q 183.8 41.8 182 50 Q 180.2 41.8 172 40 Q 180.2 38.2 182 30 Z" fill="#C2552D"/><path d="M222 20 Q 223.08 24.92 228 26 Q 223.08 27.08 222 32 Q 220.92 27.08 216 26 Q 220.92 24.92 222 20 Z" fill="#E2A93B"/><path d="M250 50 Q 250.72 53.28 254 54 Q 250.72 54.72 250 58 Q 249.28 54.72 246 54 Q 249.28 53.28 250 50 Z" fill="#C2552D"/> <g transform="translate(110 150) rotate(-40) scale(1.25)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g><g transform="translate(150 128) rotate(-70) scale(1.2)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#2F6B3B"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> <g transform="translate(250 112) rotate(-110) scale(1.25)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#2F6B3B"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g><g transform="translate(282 140) rotate(-140) scale(1.2)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> <g transform="translate(190 118) rotate(-95) scale(1.0)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#A9C4A0"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> <circle cx="218" cy="140" r="27" fill="#D9462F"/> <circle cx="218" cy="140" r="20" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="2"/> <ellipse cx="214" cy="138" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(20 214 138)"/><ellipse cx="226" cy="146" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(-30 226 146)"/><ellipse cx="206" cy="150" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(60 206 150)"/><ellipse cx="220" cy="128" rx="2" ry="3.4" fill="#E2A93B" transform="rotate(-70 220 128)"/> <circle cx="152" cy="150" r="22" fill="#E2A93B"/> <circle cx="152" cy="150" r="16" fill="#FFF3C4" opacity="0.85"/> <path d="M152 134 V166 M136 150 H168 M141 139 L163 161 M163 139 L141 161" stroke="#E2A93B" stroke-width="1.6"/> <rect x="262" y="118" width="9" height="46" rx="4.5" fill="#E8833A" transform="rotate(28 266 141)"/> <rect x="276" y="122" width="9" height="40" rx="4.5" fill="#E8833A" transform="rotate(40 280 142)"/> <path d="M86 160 H334 C 330 236, 278 276, 210 276 C 142 276, 90 236, 86 160 Z" fill="#FFFDF8" stroke="#1E2A20" stroke-width="3"/> <path d="M98 184 C 150 196, 270 196, 322 184" stroke="#2F6B3B" stroke-width="5" fill="none" stroke-linecap="round"/> <path d="M104 200 C 156 212, 264 212, 316 200" stroke="#C2552D" stroke-width="2" fill="none" stroke-dasharray="1 8" stroke-linecap="round"/> <path d="M80 160 H340" stroke="#1E2A20" stroke-width="3.5" stroke-linecap="round"/> <ellipse cx="210" cy="292" rx="70" ry="7" fill="#1E2A20" opacity="0.10"/> <g transform="translate(44 260) rotate(-20) scale(0.7)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g><g transform="translate(352 82) rotate(30) scale(0.6)"><path d="M0 0 C 14 -20, 40 -20, 54 0 C 40 20, 14 20, 0 0 Z" fill="#5E9A5C"/><path d="M3 0 Q 27 -2 51 0" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.6" fill="none"/></g> </svg>
+    </div>
+  </div>
+  <div class="pouso">
+    <section class="cartao" aria-label="Acesso">
+      <h2 class="f-titulo">Entre na sua cozinha</h2>
+      
+      <div class="abas" role="tablist"><button role="tab" aria-selected="true">Entrar</button><button role="tab" aria-selected="false">Criar conta</button><button role="tab" aria-selected="false">Esqueci a senha</button></div>
+      <form onsubmit="return false">
+        <label class="campo"><span>E-mail</span><input type="email" autocomplete="email" placeholder="voce@email.com"></label>
+        <label class="campo"><span>Senha</span><input type="password" autocomplete="current-password"></label>
+        <button class="entrar">Entrar</button>
+      </form></section>
+    <section class="lado"><ul class="recursos"><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="18" height="26" rx="4"/><path d="M7 13 H25 M11 7 V10 M11 17 V22"/></svg><div><strong>O que tem na geladeira</strong><span>Diga os ingredientes e a IA cria receitas na hora.</span></div></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="12" r="4"/><circle cx="22" cy="12" r="4"/><path d="M4 26 C 5 20, 17 20, 18 26 M15 26 C 16 20, 28 20, 29 26"/></svg><div><strong>Na medida da sua dieta</strong><span>As metas do seu nutricionista guiam cada porção.</span></div></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3 L27 7 V15 C 27 22, 22 27, 16 29 C 10 27, 5 22, 5 15 V7 Z"/><path d="M11 16 L15 20 L22 12"/></svg><div><strong>Cuidado com você</strong><span>Alergias e intolerâncias conferidas em cada resposta.</span></div></li><li><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="#2F6B3B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="6" width="24" height="22" rx="4"/><path d="M4 13 H28 M10 3 V9 M22 3 V9 M10 19 H13 M17 19 H20 M10 23 H13"/></svg><div><strong>Semana planejada</strong><span>Cardápio com calorias, pronto para baixar.</span></div></li></ul><p class="aviso">Projeto acadêmico. Receitas e nutrientes são estimativas da IA. Os cálculos de gasto energético e de proteína são aproximados e não substituem a consulta com um nutricionista.</p></section>
+  </div>
+</main>
+</body>
+</html>
